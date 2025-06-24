@@ -1,3 +1,5 @@
+
+ HEAD
   Crowdfunding DApp
 
 **Crowdfunding App** is a decentralized web application (DApp) built on Ethereum, enabling transparent and secure crowdfunding campaigns without intermediaries.
@@ -143,3 +145,17 @@ Contributions are welcome! Please open an issue or submit a pull request.
   
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+Simple Hardhat Project
+
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/Lock.js
+```
+

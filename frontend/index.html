@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crowdfund Dapp</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js" defer></script>
+  <style>
+    body {
+      background-color: #fdfdfd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 25px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #4b0082;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .form-text {
+      font-size: 0.8em;
+      color: #777;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2c172c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+
+    #campaignList {
+      text-align: left;
+      margin-top: 25px;
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Crowdfunding aplikacija</h2>
+    <button onclick="connectWallet()">🔗 Poveži MetaMask</button>
+
+    <input id="title" placeholder="Naslov kampanje" />
+    <div class="form-text">Unesite naziv kampanje</div>
+
+    <input id="goal" placeholder="Cilj (ETH)" />
+    <div class="form-text">0.1 - 10 ETH</div>
+
+    <input id="days" placeholder="Trajanje (dana)" />
+    <div class="form-text">npr. 3, 5, 7 dana</div>
+
+    <button onclick="createCampaign()">Kreiraj</button>
+
+    <input id="campaignIdDonate" placeholder="ID kampanje" />
+    <div class="form-text">npr. 0, 1, 2</div>
+
+    <input id="amountDonate" placeholder="Donacija (ETH)" />
+    <div class="form-text">0.01 - 2.00 ETH</div>
+
+    <button onclick="donate()">Doniraj</button>
+
+    <input id="campaignIdWithdraw" placeholder="ID kampanje" />
+    <div class="form-text">Samo kreator može podići</div>
+
+    <button onclick="withdraw()">Podigni sredstva</button>
+
+    <input id="campaignIdRefund" placeholder="ID kampanje" />
+    <div class="form-text">Ako cilj nije postignut</div>
+
+    <button onclick="refund()">Refundacija</button>
+
+    <div id="campaignList"></div>
+  </div>
+</body>
+</html>
